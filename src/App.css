@@ -1,0 +1,115 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.grid-row {
+  display: contents;
+}
+
+.grid-cell {
+  cursor: pointer;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.grid-cell-full {
+  background-color: #cdc1b4;
+  color: #776e65;
+}
+
+.grid-cell-empty {
+  background-color: #b3a393;
+  color: #776e65;
+}
+.grid-cell:hover {
+  background-color: #e0d8c8;
+  font-size: 26px;
+}
+
+.move-to-1-3 {
+  transform: translate(100px, 0); /* Ajusta según el tamaño de las celdas */
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightgray;
+  position: absolute;
+  transition: all 0.2s ease-in-out; /* Animación de transición */
+}
+
+.cell.new {
+  animation: pop 0.3s ease-in-out; /* Animación al generar una nueva celda */
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cell.merged {
+  animation: merge 0.3s ease-in-out;
+}
+
+@keyframes merge {
+  0% {
+    transform: scale(1);
+    background-color: #ffdb58;
+  }
+  100% {
+    transform: scale(1.1);
+    background-color: #ff6347;
+  }
+}
+
+.scores{ 
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  padding-inline: 9rem;
+  justify-content: space-between;
+}
+
+.scores-container{
+  margin-top: 1rem; 
+  width: 100%;
+}
